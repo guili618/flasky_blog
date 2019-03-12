@@ -1,6 +1,4 @@
-from flasky_blog import create_app
-
-app = create_app()
+from flasky_blog import app
 
 
 

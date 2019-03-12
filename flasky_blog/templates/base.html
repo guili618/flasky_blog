@@ -21,24 +21,24 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">我的博客</a>
+          <a class="navbar-brand mr-4" href="{{ url_for('main.home') }}">我的博客</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{{ url_for('home') }}">主页</a>
-              <a class="nav-item nav-link" href="{{ url_for('about') }}">关于</a>
+              <a class="nav-item nav-link" href="{{ url_for('main.home') }}">主页</a>
+              <a class="nav-item nav-link" href="{{ url_for('main.about') }}">关于</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
-                <a class="nav-item nav-link" href="{{ url_for('account') }}">用户</a>
-                <a class="nav-item nav-link" href="{{ url_for('new_post') }}">发布博客</a>
-                <a class="nav-item nav-link" href="{{ url_for('logout') }}">退出</a>
+                <a class="nav-item nav-link" href="{{ url_for('users.account') }}">用户</a>
+                <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">发布博客</a>
+                <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">退出</a>
               {% else %}
-                <a class="nav-item nav-link" href="{{ url_for('login') }}">登录</a>
-                <a class="nav-item nav-link" href="{{ url_for('register') }}">注册</a>
+                <a class="nav-item nav-link" href="{{ url_for('users.login') }}">登录</a>
+                <a class="nav-item nav-link" href="{{ url_for('users.register') }}">注册</a>
               {% endif %}
             </div>
           </div>
