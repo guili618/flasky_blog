@@ -41,8 +41,10 @@ def create_app(config_class=Config):
         from flasky_blog.users.routes import users_bp
         from flasky_blog.posts.routes import posts_bp
         from flasky_blog.main.routes import main_bp
+        from flasky_blog.errors.handlers import errors_bp
         app.register_blueprint(users_bp)
         app.register_blueprint(posts_bp)
         app.register_blueprint(main_bp)
+        app.register_blueprint(errors_bp)
 
         return app
